@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class Ex1_HandlingOfDroDown 
+public class Ex1_HandlingOfDropDown
 {
 	public static void main(String[] args) throws InterruptedException 
 	{
