@@ -1,4 +1,4 @@
-package POM_with_PageFactory;
+package POM_DDF;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -28,10 +28,9 @@ public class PBMyProfilePage
 		driver1.switchTo().window(al.get(1));
 	}
 	
-	public void verifyPBMyProfilePageFullName()
+	public void verifyPBMyProfilePageFullName(String ExpName)
 	{
 		String ActName = fullName.getAttribute("value");
-		String ExpName= "Gauri Khedekar";
 		
 		if(ActName.equals(ExpName))
 		{

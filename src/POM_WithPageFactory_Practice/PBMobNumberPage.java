@@ -1,4 +1,4 @@
-package POM_with_PageFactory;
+package POM_WithPageFactory_Practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,21 +11,19 @@ public class PBMobNumberPage
 	@FindBy(xpath="(//span[text()='Sign in with Password'])[2]") private WebElement SignInWithPwd;
 
 	
-	public PBMobNumberPage(WebDriver driver)
+	public PBMobNumberPage(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	public void inpPBMobNumberPageMobNumber() 
+	public void enterMobNumber() 
 	{
 		MobNumber.sendKeys("7387100353");
 	}
 	
-	public void clickPBMobNumberPageSignInWithPwdButton() 
+	public void clickOnSignInBtn() 
 	{
-		SignInWithPwd.click();
+		SignInWithPwd.click();	
 	}
-	
 	
 }

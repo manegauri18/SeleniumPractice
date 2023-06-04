@@ -1,4 +1,4 @@
-package POM_with_PageFactory;
+package POM_WithPageFactory_Practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,11 +17,11 @@ public class PBHomePage
 		driver1=driver;
 	}
 	
-	
-	public void openMyAccDDPBHomePagemyAcc() 
+	public void openMyAccOptionDropdown() throws InterruptedException 
 	{
-		Actions act = new Actions(driver1);
+		Actions act= new Actions(driver1);
 		act.moveToElement(myAcc).perform();
+		Thread.sleep(2000);
 	}
 
 }

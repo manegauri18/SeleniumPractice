@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class Ex1 
+public class Ex2_UsingHomeKey 
 {
 	public static void main(String[] args) throws InterruptedException
 	{
@@ -28,15 +28,23 @@ public class Ex1
 		
 		act.click(month).perform();
 		
-		act.sendKeys(Keys.ARROW_UP).perform();
-		Thread.sleep(1000);
-		act.sendKeys(Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.HOME).perform();
 		Thread.sleep(2000);
 		
-		act.sendKeys(Keys.ARROW_DOWN).perform();
-		Thread.sleep(2000);
+		//select nov month using home key
+		for(int i=1; i<=10; i++)
+		{
+			act.sendKeys(Keys.ARROW_DOWN).perform();
+			Thread.sleep(2000);
+		}
 		
 		act.sendKeys(Keys.ENTER).perform();
+		
+		
+		
+		
+		
+		
 		
 		
 		

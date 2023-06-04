@@ -1,14 +1,22 @@
-package POM_with_PageFactory;
+package POM_DDF;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class PBLoginTest 
 {
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException 
 	{
+		FileInputStream file = new FileInputStream("C:\\Users\\91738\\Desktop\\Selenium software\\Excel sheet\\28th Jan.xlsx");
+		Sheet sh = WorkbookFactory.create(file).getSheet("DDF");
+		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.policybazaar.com/");
@@ -18,12 +26,16 @@ public class PBLoginTest
 		login.ClickPBLoginPageSignIn();
 		
 		PBMobNumberPage mobNumber= new PBMobNumberPage(driver);
-		mobNumber.inpPBMobNumberPageMobNumber();
+		
+		String mobileNumber = sh.getRow(0).getCell(0).getStringCellValue();
+		mobNumber.inpPBMobNumberPageMobNumber(mobileNumber);
 		mobNumber.clickPBMobNumberPageSignInWithPwdButton();
 		Thread.sleep(2000);
 		
 		PBPwdPage pwd= new PBPwdPage(driver);
-		pwd.inpPBPwdPagePwd();
+		
+		String password = sh.getRow(0).getCell(1).getStringCellValue();
+		pwd.inpPBPwdPagePwd(password);
 		pwd.clickPBPwdPageSignInBtn();
 		Thread.sleep(2000);
 		
@@ -37,7 +49,9 @@ public class PBLoginTest
 		
 		PBMyProfilePage profile= new PBMyProfilePage(driver);
 		profile.switchToChildWindow();
-		profile.verifyPBMyProfilePageFullName();
+		
+		String fullName = sh.getRow(0).getCell(2).getStringCellValue();
+		profile.verifyPBMyProfilePageFullName(fullName);
 		Thread.sleep(2000);
 		
 		driver.quit();

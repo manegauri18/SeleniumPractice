@@ -1,4 +1,4 @@
-package POM_with_PageFactory;
+package POM_WithPageFactory_Practice;
 
 import java.time.Duration;
 
@@ -14,33 +14,45 @@ public class PBLoginTest
 		driver.get("https://www.policybazaar.com/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		
-		PBLoginPage login = new PBLoginPage(driver);
-		login.ClickPBLoginPageSignIn();
+		PBLoginPage login= new PBLoginPage(driver);
+		login.clickOnSignInBtn();
 		
-		PBMobNumberPage mobNumber= new PBMobNumberPage(driver);
-		mobNumber.inpPBMobNumberPageMobNumber();
-		mobNumber.clickPBMobNumberPageSignInWithPwdButton();
+		PBMobNumberPage mobNum= new PBMobNumberPage(driver);
+		mobNum.enterMobNumber();
+		mobNum.clickOnSignInBtn();
 		Thread.sleep(2000);
 		
 		PBPwdPage pwd= new PBPwdPage(driver);
-		pwd.inpPBPwdPagePwd();
-		pwd.clickPBPwdPageSignInBtn();
+		pwd.enterPwd();
+		pwd.clickOnSignInBtn();
 		Thread.sleep(2000);
 		
 		PBHomePage home= new PBHomePage(driver);
-		home.openMyAccDDPBHomePagemyAcc();
+		home.openMyAccOptionDropdown();
 		Thread.sleep(2000);
 		
 		PBMyAccPage myAcc= new PBMyAccPage(driver);
-		myAcc.clickPBMyAccPageMyProfile();
+		myAcc.ClickOnMyProfileBtn();
 		Thread.sleep(2000);
 		
-		PBMyProfilePage profile= new PBMyProfilePage(driver);
-		profile.switchToChildWindow();
-		profile.verifyPBMyProfilePageFullName();
-		Thread.sleep(2000);
+		PBMyProfilePage myProfile= new PBMyProfilePage(driver);
+		myProfile.switchToChildWindow();
+		myProfile.verifyFullName();
 		
 		driver.quit();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}

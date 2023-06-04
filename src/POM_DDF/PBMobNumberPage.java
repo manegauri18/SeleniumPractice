@@ -1,4 +1,4 @@
-package POM_with_PageFactory;
+package POM_DDF;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,9 +17,9 @@ public class PBMobNumberPage
 	}
 	
 	
-	public void inpPBMobNumberPageMobNumber() 
+	public void inpPBMobNumberPageMobNumber(String mobileNum) 
 	{
-		MobNumber.sendKeys("7387100353");
+		MobNumber.sendKeys(mobileNum);
 	}
 	
 	public void clickPBMobNumberPageSignInWithPwdButton() 

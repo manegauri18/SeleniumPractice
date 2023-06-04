@@ -1,4 +1,4 @@
-package POM_with_PageFactory;
+package POM_WithPageFactory_Practice;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -13,13 +13,11 @@ public class PBMyProfilePage
 	@FindBy(xpath="//input[@name='personName']") private WebElement fullName;
 	WebDriver driver1;
 	
-	
-	public PBMyProfilePage(WebDriver driver)
+	public PBMyProfilePage(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
-		driver1= driver;
+		driver1=driver;
 	}
-	
 	
 	public void switchToChildWindow()
 	{
@@ -28,28 +26,19 @@ public class PBMyProfilePage
 		driver1.switchTo().window(al.get(1));
 	}
 	
-	public void verifyPBMyProfilePageFullName()
+	public void verifyFullName() 
 	{
 		String ActName = fullName.getAttribute("value");
-		String ExpName= "Gauri Khedekar";
+		String ExpName="Gauri Khedekar";
 		
-		if(ActName.equals(ExpName))
+		if (ActName.equals(ExpName)) 
 		{
 			System.out.println("TC Pass");
-		}
-		else
+		} 
+		else 
 		{
-			System.out.println("TC Fail");
+            System.out.println("TC Fail");
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

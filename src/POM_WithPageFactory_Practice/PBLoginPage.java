@@ -1,24 +1,24 @@
-package POM_with_PageFactory;
+package POM_WithPageFactory_Practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PBMyAccPage 
+public class PBLoginPage 
 {
-	@FindBy(xpath="//span[text()=' My profile ']") private WebElement myProfile;
+	@FindBy(xpath="//a[text()='Sign in']") private WebElement SignIn;
 	
 	
-	public PBMyAccPage(WebDriver driver)
+	public PBLoginPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
 	
-	public void clickPBMyAccPageMyProfile() 
+	public void clickOnSignInBtn()
 	{
-		myProfile.click();
+		SignIn.click();
 	}
 
 }

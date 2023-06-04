@@ -1,11 +1,11 @@
-package POM_with_PageFactory;
+package POM_WithPageFactory_Practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PBPwdPage
+public class PBPwdPage 
 {
 	@FindBy(xpath="//input[@name='password']") private WebElement pwd;
 	@FindBy(xpath="//a[@id='login-in-with-password']") private WebElement SignIn;
@@ -16,13 +16,12 @@ public class PBPwdPage
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	public void inpPBPwdPagePwd() 
+	public void enterPwd() 
 	{
 		pwd.sendKeys("Pbazaar@1819");
 	}
 	
-	public void clickPBPwdPageSignInBtn() 
+	public void clickOnSignInBtn() 
 	{
 		SignIn.click();
 	}
