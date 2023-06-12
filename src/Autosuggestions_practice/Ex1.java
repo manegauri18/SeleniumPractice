@@ -15,11 +15,11 @@ public class Ex1
 		driver.manage().window().maximize();
 		driver.get("https://www.google.com/");
 		
-		driver.findElement(By.xpath("//textarea[@class='gLFyf']")).sendKeys("java");
+		driver.findElement(By.xpath("//textarea[@class='gLFyf']")).sendKeys("selenium");
 		Thread.sleep(2000);
-		String ExpText = "java interview questions";
+		String ExpText = "selenium webdriver";
 		
-		List<WebElement> allOptions = driver.findElements(By.xpath("//ul[@class='G43f7e']/li"));
+		List<WebElement> allOptions = driver.findElements(By.xpath("(//ul[@class='G43f7e'])[1]/li"));
 		
 		for(WebElement s1 : allOptions)
 		{
