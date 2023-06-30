@@ -14,7 +14,7 @@ public class Ex10_FailedXML
 	@Test
 	public void TC2() 
 	{
-	   Reporter.log("Running TC2", true);	
+	   Reporter.log("Running TC2", true);
 	}
 
 	@Test
