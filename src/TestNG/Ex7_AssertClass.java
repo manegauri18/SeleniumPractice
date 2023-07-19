@@ -12,7 +12,7 @@ public class Ex7_AssertClass
 		String ActResult = "hi";
 		String ExpResult = "hello";
 		
-		Assert.assertEquals(ActResult, ExpResult, "Failed1: both results are same");
+		Assert.assertEquals(ActResult, ExpResult, "Failed1: both results are differ.");
 		
 		
 		boolean ActResult1 = false;

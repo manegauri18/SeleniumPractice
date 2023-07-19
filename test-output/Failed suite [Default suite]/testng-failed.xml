@@ -5,8 +5,7 @@
     <classes>
       <class name="TestNG.Ex10_FailedXML">
         <methods>
-          <include name="TC4"/>
-          <include name="TC5"/>
+          <include name="TC3"/>
         </methods>
       </class> <!-- TestNG.Ex10_FailedXML -->
     </classes>

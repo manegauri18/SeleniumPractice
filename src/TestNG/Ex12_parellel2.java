@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class Ex12_parellel2 
 {
 	@Test
-	public void OpenFacebookApp() throws InterruptedException 
+	public void OpenGoogleApp() throws InterruptedException 
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
