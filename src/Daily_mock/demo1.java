@@ -10,7 +10,7 @@ public class demo1
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.flipkart.com/");
-		Thread.sleep(700);
+		Thread.sleep(7000);
 		
 		driver.manage().window().maximize();
 		
